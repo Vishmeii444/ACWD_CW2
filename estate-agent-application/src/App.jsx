@@ -1,9 +1,15 @@
-function App(){
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import SearchPage from './pages/SearchPage.jsx';
+import PropertyPage from '.pages/PropertyPage'
+
+
+export default function App(){
   return(
-    <div>
-      <h1>Estate Agent Application</h1>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<SearchPage />} />
+      <Route path="/property/:id" element={<PropertyPage />} />
+    </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
