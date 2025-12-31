@@ -1,10 +1,10 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import SearchPage from './pages/SearchPage.jsx';
-import PropertyPage from '.pages/PropertyPage'
+import SearchPage from "./pages/SearchPage";
+import PropertyPage from "./pages/PropertyPage";
 
 
 export default function App(){
-  return(
+  return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<SearchPage />} />
