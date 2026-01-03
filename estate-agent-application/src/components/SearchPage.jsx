@@ -1,14 +1,24 @@
 import { useState } from "react";
+import properties from "../data/properties.json";
+import"./SearchPage.css";
+import { Link } from "react-router-dom";
+import Select from "react-select";
+import Slide from "rc-slider";
+import "rc-slider/assets/index.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css"
 
-export default function SearchPage() {
-  const [type, setType] = useState("");
+export default function SearchPage({favourites, setFavourites}) {
+  const [type, setType] = useState(null);
   const [bedroomsMin, setBedroomsMin] = useState(1);
-  const [bedroomsMax, setBedroomsMax] = useState(5);
-  const [priceMin, setPriceMin] = useState(100000);
-  const [priceMax, setPriceMax] = useState(500000);
+  const [bedroomsMax, setBedroomsMax] = useState(10);
+  const [priceRange, setPriceRange] = useState([100000, 1000000]);
   const [postcode, setPostcode] = useState("");
-  const [date, setDate] = useState("");
+  const [dateFrom, setDateFrom] = useState(null);
+  const [dateTo, setDateTo] = useState(null);
 
+  const [searchResults, setSearchResults] = useState([]);
+  const [hasSearched, setHasSearched] = useState(false);
   const handleSearch = () => {
     console.log("Search filters: ");
     console.log({
