@@ -7,15 +7,14 @@ export default function App() {
   const [favourites, setFavourites] = useState([]);
   return (
     <BrowserRouter>
-      {" "}
       <Routes>
-        {" "}
         <Route
           path="/"
           element={
-            <SearchPage favourites={favourites} setFavourites={setFavourites} />
+            <SearchPage favourites={favourites} 
+            setFavourites={setFavourites} />
           }
-        />{" "}
+        />
         <Route
           path="/property/:id"
           element={
@@ -24,8 +23,8 @@ export default function App() {
               setFavourites={setFavourites}
             />
           }
-        />{" "}
-      </Routes>{" "}
+        />
+      </Routes>
     </BrowserRouter>
   );
 }

@@ -4,149 +4,217 @@
       "id": "prop1",
       "type": "House",
       "bedrooms": 3,
-      "price": 750000,
+      "price": 450000,
       "tenure": "Freehold",
-      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
-      "location": "Petts Wood Road, Petts Wood, Orpington BR5",
-      "picture": "images/prop1pic1small.jpg",
-      "url": "properties/prop1.html",
+      "description": "Modern 3-bedroom family house located in NW1 with an open-plan kitchen, private garden, and excellent transport links. Spacious interiors, bright rooms, and a well-presented finish throughout...",
+      "location": "Camden Town, London NW1",
+      "postcode": "NW1",
+      "floorplan": "images/floorplan.jpg",
+      "picture": "images/prop1.jpg",
+      "images": [
+        "images/prop1.jpg",
+        "images/prop2.jpg",
+        "images/prop3.jpg",
+        "images/prop4.jpg",
+        "images/prop5.jpg",
+        "images/prop6.jpg",
+        "images/prop7.jpg",
+        "images/prop8.jpg"
+      ],
       "added": {
-        "month": "October",
-        "day": 12,
-        "year": 2022
+        "month": 1,
+        "day": 10,
+        "year": 2025
       }
     },
     {
       "id": "prop2",
       "type": "Flat",
       "bedrooms": 2,
-      "price": 399995,
-      "tenure": "Freehold",
-      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
-      "location": "Crofton Road Orpington BR6",
-      "picture": "images/prop2pic1small.jpg",
-      "url": "properties/prop2.html",
+      "price": 320000,
+      "tenure": "Leasehold",
+      "description": "Bright and modern 2-bedroom flat in BR1 with contemporary interiors, open-plan living, and close proximity to local amenities. Ideal for first-time buyers or investors...",
+      "location": "Bromley Road, Bromley BR1",
+      "postcode": "BR1",
+      "floorplan": "images/floorplan.jpg",
+      "picture": "images/prop2.jpg",
+      "images": [
+        "images/prop1.jpg",
+        "images/prop2.jpg",
+        "images/prop3.jpg",
+        "images/prop4.jpg",
+        "images/prop5.jpg",
+        "images/prop6.jpg",
+        "images/prop7.jpg",
+        "images/prop8.jpg"
+      ],
       "added": {
-        "month": "September",
-        "day": 14,
-        "year": 2022
+        "month": 1,
+        "day": 5,
+        "year": 2025
       }
     },
     {
-      "properties": [
-        {
-          "id": "prop1",
-          "type": "House",
-          "bedrooms": 3,
-          "price": 450000,
-          "tenure": "Freehold",
-          "description": "Modern 3-bedroom family house located in NW1 with an open-plan kitchen, private garden, and excellent transport links. Spacious interiors, bright rooms, and a well-presented finish throughout...",
-          "location": "Camden Town, London NW1",
-          "picture": "images/prop1pic1small.jpg",
-          "url": "properties/prop1.html",
-          "added": {
-            "month": "January",
-            "day": 10,
-            "year": 2025
-          }
-        },
-        {
-          "id": "prop2",
-          "type": "Flat",
-          "bedrooms": 2,
-          "price": 320000,
-          "tenure": "Leasehold",
-          "description": "Bright and modern 2-bedroom flat in BR1 with contemporary interiors, open-plan living, and close proximity to local amenities. Ideal for first-time buyers or investors...",
-          "location": "Bromley Road, Bromley BR1",
-          "picture": "images/prop2pic1small.jpg",
-          "url": "properties/prop2.html",
-          "added": {
-            "month": "January",
-            "day": 5,
-            "year": 2025
-          }
-        },
-        {
-          "id": "prop3",
-          "type": "House",
-          "bedrooms": 5,
-          "price": 780000,
-          "tenure": "Freehold",
-          "description": "Luxury 5-bedroom home in SW3 featuring high ceilings, premium finishes, a large garden, and spacious living areas. Located in one of London's most desirable postcodes...",
-          "location": "Chelsea, London SW3",
-          "picture": "images/prop3pic1small.jpg",
-          "url": "properties/prop3.html",
-          "added": {
-            "month": "December",
-            "day": 20,
-            "year": 2024
-          }
-        },
-        {
-          "id": "prop4",
-          "type": "Flat",
-          "bedrooms": 1,
-          "price": 250000,
-          "tenure": "Leasehold",
-          "description": "Stylish 1-bedroom flat in E14 with modern fittings, bright interiors, and excellent transport links. Perfect for young professionals working in Canary Wharf...",
-          "location": "Canary Wharf, London E14",
-          "picture": "images/prop4pic1small.jpg",
-          "url": "properties/prop4.html",
-          "added": {
-            "month": "January",
-            "day": 15,
-            "year": 2025
-          }
-        },
-        {
-          "id": "prop5",
-          "type": "House",
-          "bedrooms": 4,
-          "price": 600000,
-          "tenure": "Freehold",
-          "description": "Charming 4-bedroom family home in N10 with a large garden, driveway, and newly renovated kitchen. Located in a quiet residential area with great schools...",
-          "location": "Muswell Hill, London N10",
-          "picture": "images/prop5pic1small.jpg",
-          "url": "properties/prop5.html",
-          "added": {
-            "month": "November",
-            "day": 30,
-            "year": 2024
-          }
-        },
-        {
-          "id": "prop6",
-          "type": "Flat",
-          "bedrooms": 3,
-          "price": 410000,
-          "tenure": "Leasehold",
-          "description": "Modern 3-bedroom flat in SE1 with river views, open-plan living, and access to a private balcony. Close to London Bridge and major attractions...",
-          "location": "South Bank, London SE1",
-          "picture": "images/prop6pic1small.jpg",
-          "url": "properties/prop6.html",
-          "added": {
-            "month": "January",
-            "day": 2,
-            "year": 2025
-          }
-        },
-        {
-          "id": "prop7",
-          "type": "House",
-          "bedrooms": 3,
-          "price": 520000,
-          "tenure": "Freehold",
-          "description": "Beautifully maintained 3-bedroom house in W5 with spacious living areas, modern kitchen, and excellent school catchment. Ideal for families...",
-          "location": "Ealing, London W5",
-          "picture": "images/prop7pic1small.jpg",
-          "url": "properties/prop7.html",
-          "added": {
-            "month": "December",
-            "day": 10,
-            "year": 2024
-          }
-        }
-      ]
+      "id": "prop3",
+      "type": "House",
+      "bedrooms": 5,
+      "price": 780000,
+      "tenure": "Freehold",
+      "description": "Luxury 5-bedroom home in SW3 featuring high ceilings, premium finishes, a large garden, and spacious living areas. Located in one of London's most desirable postcodes...",
+      "location": "Chelsea, London SW3",
+      "postcode": "SW3",
+      "floorplan": "images/floorplan.jpg",
+      "picture": "images/prop3.jpg",
+      "images": [
+        "images/prop1.jpg",
+        "images/prop2.jpg",
+        "images/prop3.jpg",
+        "images/prop4.jpg",
+        "images/prop5.jpg",
+        "images/prop6.jpg",
+        "images/prop7.jpg",
+        "images/prop8.jpg"
+      ],
+      "added": {
+        "month": 12,
+        "day": 20,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop4",
+      "type": "Flat",
+      "bedrooms": 1,
+      "price": 250000,
+      "tenure": "Leasehold",
+      "description": "Stylish 1-bedroom flat in E14 with modern fittings, bright interiors, and excellent transport links. Perfect for young professionals working in Canary Wharf...",
+      "location": "Canary Wharf, London E14",
+      "postcode": "E14",
+      "floorplan": "images/floorplan.jpg",
+      "picture": "images/prop4.jpg",
+      "images": [
+        "images/prop1.jpg",
+        "images/prop2.jpg",
+        "images/prop3.jpg",
+        "images/prop4.jpg",
+        "images/prop5.jpg",
+        "images/prop6.jpg",
+        "images/prop7.jpg",
+        "images/prop8.jpg"
+      ],
+      "added": {
+        "month": 1,
+        "day": 15,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop5",
+      "type": "House",
+      "bedrooms": 4,
+      "price": 600000,
+      "tenure": "Freehold",
+      "description": "Charming 4-bedroom family home in N10 with a large garden, driveway, and newly renovated kitchen. Located in a quiet residential area with great schools...",
+      "location": "Muswell Hill, London N10",
+      "postcode": "N10",
+      "floorplan": "images/floorplan.jpg",
+      "picture": "images/prop5.jpg",
+      "images": [
+        "images/prop1.jpg",
+        "images/prop2.jpg",
+        "images/prop3.jpg",
+        "images/prop4.jpg",
+        "images/prop5.jpg",
+        "images/prop6.jpg",
+        "images/prop7.jpg",
+        "images/prop8.jpg"
+      ],
+      "added": {
+        "month": 11,
+        "day": 30,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop6",
+      "type": "Flat",
+      "bedrooms": 3,
+      "price": 410000,
+      "tenure": "Leasehold",
+      "description": "Modern 3-bedroom flat in SE1 with river views, open-plan living, and access to a private balcony. Close to London Bridge and major attractions...",
+      "location": "South Bank, London SE1",
+      "postcode": "SE1",
+      "floorplan": "images/floorplan.jpg",
+      "picture": "images/prop6.jpg",
+      "images": [
+        "images/prop1.jpg",
+        "images/prop2.jpg",
+        "images/prop3.jpg",
+        "images/prop4.jpg",
+        "images/prop5.jpg",
+        "images/prop6.jpg",
+        "images/prop7.jpg",
+        "images/prop8.jpg"
+      ],
+      "added": {
+        "month": 1,
+        "day": 2,
+        "year": 2025
+      }
+    },
+    {
+      "id": "prop7",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 520000,
+      "tenure": "Freehold",
+      "description": "Beautifully maintained 3-bedroom house in W5 with spacious living areas, modern kitchen, and excellent school catchment. Ideal for families...",
+      "location": "Ealing, London W5",
+      "postcode": "W5",
+      "floorplan": "images/floorplan.jpg",
+      "picture": "images/prop7.jpg",
+      "images": [
+        "images/prop1.jpg",
+        "images/prop2.jpg",
+        "images/prop3.jpg",
+        "images/prop4.jpg",
+        "images/prop5.jpg",
+        "images/prop6.jpg",
+        "images/prop7.jpg",
+        "images/prop8.jpg"
+      ],
+      "added": {
+        "month": 12,
+        "day": 10,
+        "year": 2024
+      }
+    },
+    {
+      "id": "prop8",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 350000,
+      "tenure": "Leasehold",
+      "description": "Contemporary 2-bedroom apartment in a vibrant area with excellent transport links, modern finishes, and plenty of natural light...",
+      "location": "Shoreditch, London E1",
+      "postcode": "E1",
+      "floorplan": "images/floorplan.jpg",
+      "picture": "images/prop8.jpg",
+      "images": [
+        "images/prop1.jpg",
+        "images/prop2.jpg",
+        "images/prop3.jpg",
+        "images/prop4.jpg",
+        "images/prop5.jpg",
+        "images/prop6.jpg",
+        "images/prop7.jpg",
+        "images/prop8.jpg"
+      ],
+      "added": {
+        "month": 1,
+        "day": 18,
+        "year": 2025
+      }
     }
   ]
 }

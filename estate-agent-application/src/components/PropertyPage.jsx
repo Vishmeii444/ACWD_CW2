@@ -98,10 +98,12 @@ export default function PropertyDetails({ favourites, setFavourites }) {
           <Tab>Map</Tab>
         </TabList>
 
+        {/* Description */}
         <TabPanel>
           <div className="tab-content">
             <h2>Property Description</h2>
             <p className="short-desc">{property.description}</p>
+
             <h3>Full Details</h3>
             <p className="long-desc">{property.longDescription}</p>
             <div className="property-features">
@@ -110,29 +112,35 @@ export default function PropertyDetails({ favourites, setFavourites }) {
                 <li>{property.bedrooms} Bedrooms</li>
                 <li>{property.type}</li>
                 <li>{property.tenure}</li>
-                <li>Located in {property.postcode}</li>
+                <li>Located in {property.location}</li>
               </ul>
             </div>
           </div>
         </TabPanel>
 
+        {/* Floor Plan */}
         <TabPanel>
           <div className="tab-content">
             <h2>Floor Plan</h2>
-            <img 
+            {property.floorplan ? (
+                <img 
               src={property.floorplan} 
               alt="Floor plan"
               className="floorplan-image"
             />
+            ) : (
+                <p>No floor plan available</p>
+            )}
           </div>
         </TabPanel>
 
+        {/* Map */}
         <TabPanel>
           <div className="tab-content">
             <h2>Location Map</h2>
             <p className="map-address">{property.location}</p>
             <div className="map-placeholder">
-              <p>📍 Map View</p>
+              <p> Map View</p>
               <p className="map-note">
                 Google Maps would display here with property location
               </p>
@@ -140,6 +148,17 @@ export default function PropertyDetails({ favourites, setFavourites }) {
                 To enable: Replace YOUR_API_KEY in the code with your Google Maps API key
               </p>
             </div>
+            {/* Uncomment when you have an API key:
+            <iframe
+              src={mapUrl}
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+            */}
           </div>
         </TabPanel>
       </Tabs>
