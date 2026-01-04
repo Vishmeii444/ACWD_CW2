@@ -10,16 +10,14 @@
       "location": "Camden Town, London NW1",
       "postcode": "NW1",
       "floorplan": "images/floorplan.jpg",
-      "picture": "images/prop1.jpg",
+      "picture": "images/prop1/p1_1.jpg",
       "images": [
-        "images/prop9.jpg",
-        "images/prop2.jpg",
-        "images/prop3.jpg",
-        "images/prop4.jpg",
-        "images/prop5.jpg",
-        "images/prop6.jpg",
-        "images/prop7.jpg",
-        "images/prop8.jpg"
+        "images/prop1/p1_1.jpg",
+        "images/prop1/p1_2.jpg",
+        "images/prop1/p1_3.jpg",
+        "images/prop1/p1_4.jpg",
+        "images/prop1/p1_5.jpg",
+        "images/prop1/p1_6.jpg"
       ],
       "added": {
         "month": 1,
@@ -37,16 +35,14 @@
       "location": "Bromley Road, Bromley BR1",
       "postcode": "BR1",
       "floorplan": "images/floorplan.jpg",
-      "picture": "images/prop2.jpg",
+      "picture": "images/prop2/p2_1.jpg",
       "images": [
-        "images/prop1.jpg",
-        "images/prop2.jpg",
-        "images/prop3.jpg",
-        "images/prop4.jpg",
-        "images/prop5.jpg",
-        "images/prop6.jpg",
-        "images/prop7.jpg",
-        "images/prop8.jpg"
+        "images/prop2/p2_1.jpg",
+        "images/prop2/p2_2.jpg",
+        "images/prop2/p2_3.jpg",
+        "images/prop2/p2_4.jpg",
+        "images/prop2/p2_5.jpg",
+        "images/prop2/p2_6.jpg"
       ],
       "added": {
         "month": 1,
@@ -64,16 +60,14 @@
       "location": "Chelsea, London SW3",
       "postcode": "SW3",
       "floorplan": "images/floorplan.jpg",
-      "picture": "images/prop3.jpg",
+      "picture": "images/prop3/p3_1.jpg",
       "images": [
-        "images/prop1.jpg",
-        "images/prop2.jpg",
-        "images/prop3.jpg",
-        "images/prop4.jpg",
-        "images/prop5.jpg",
-        "images/prop6.jpg",
-        "images/prop7.jpg",
-        "images/prop8.jpg"
+        "images/prop3/p3_1.jpg",
+        "images/prop3/p3_2.jpg",
+        "images/prop3/p3_3.jpg",
+        "images/prop3/p3_4.jpg",
+        "images/prop3/p3_5.jpg",
+        "images/prop3/p3_6.jpg"
       ],
       "added": {
         "month": 12,
@@ -91,16 +85,14 @@
       "location": "Canary Wharf, London E14",
       "postcode": "E14",
       "floorplan": "images/floorplan.jpg",
-      "picture": "images/prop4.jpg",
+      "picture": "images/prop4/p4_1.jpg",
       "images": [
-        "images/prop1.jpg",
-        "images/prop2.jpg",
-        "images/prop3.jpg",
-        "images/prop4.jpg",
-        "images/prop5.jpg",
-        "images/prop6.jpg",
-        "images/prop7.jpg",
-        "images/prop8.jpg"
+        "images/prop4/p4_1.jpg",
+        "images/prop4/p4_2.jpg",
+        "images/prop4/p4_3.jpg",
+        "images/prop4/p4_4.jpg",
+        "images/prop4/p4_5.jpg",
+        "images/prop4/p4_6.jpg"
       ],
       "added": {
         "month": 1,
@@ -118,48 +110,19 @@
       "location": "Muswell Hill, London N10",
       "postcode": "N10",
       "floorplan": "images/floorplan.jpg",
-      "picture": "images/prop5.jpg",
+      "picture": "images/prop5/p5_1.jpg",
       "images": [
-        "images/prop1.jpg",
-        "images/prop2.jpg",
-        "images/prop3.jpg",
-        "images/prop4.jpg",
-        "images/prop5.jpg",
-        "images/prop6.jpg",
-        "images/prop7.jpg",
-        "images/prop8.jpg"
+        "images/prop5/p5_1.jpg",
+        "images/prop5/p5_2.jpg",
+        "images/prop5/p5_3.jpg",
+        "images/prop5/p5_4.jpg",
+        "images/prop5/p5_5.jpg",
+        "images/prop5/p5_6.jpg"
       ],
       "added": {
         "month": 11,
         "day": 30,
         "year": 2024
-      }
-    },
-    {
-      "id": "prop6",
-      "type": "Flat",
-      "bedrooms": 3,
-      "price": 410000,
-      "tenure": "Leasehold",
-      "description": "Modern 3-bedroom flat in SE1 with river views, open-plan living, and access to a private balcony. Close to London Bridge and major attractions...",
-      "location": "South Bank, London SE1",
-      "postcode": "W5",
-      "floorplan": "images/floorplan.jpg",
-      "picture": "images/prop6.jpg",
-      "images": [
-        "images/prop1.jpg",
-        "images/prop2.jpg",
-        "images/prop3.jpg",
-        "images/prop4.jpg",
-        "images/prop5.jpg",
-        "images/prop6.jpg",
-        "images/prop7.jpg",
-        "images/prop8.jpg"
-      ],
-      "added": {
-        "month": 1,
-        "day": 2,
-        "year": 2025
       }
     }
   ]

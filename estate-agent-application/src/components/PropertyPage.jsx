@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import properties from "../data/properties.json";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -8,10 +8,12 @@ import "./PropertyPage.css";
 export default function PropertyPage({ favourites, setFavourites }) {
   const { id } = useParams();
   const property = properties.properties.find((p) => p.id === id);
-  console.log("PROPERTY PAGE IS BEING USED:", property);
-  console.log("IMAGES:", property?.images);
 
   const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    setCurrentImage(0);
+  }, [id]);
 
   if (!property) {
     return (
@@ -76,15 +78,22 @@ export default function PropertyPage({ favourites, setFavourites }) {
           <button className="nav-btn prev-btn" onClick={prevImage}>
             ‹
           </button>
-          <img
-            key={property.images[currentImage]}
-            src={property.images[currentImage]}
-            alt={`Property view ${currentImage + 1}`}
-            className="main-image"
-            onError={(e) => {
-              e.target.src = "images/fallback.jpg";
-            }}
-          />
+
+          {property.images.map((img, index) => (
+            <img
+              key={`img-${index}`}
+              src={img}
+              alt={`Property view ${index + 1}`}
+              className="main-image"
+              style={{
+                opacity: index === currentImage ? 1 : 0,
+                pointerEvents: index === currentImage ? 'auto' : 'none'
+              }}
+              onError={(e) => {
+                e.target.src = "images/fallback.jpg";
+              }}
+            />
+          ))}
 
           <button className="nav-btn next-btn" onClick={nextImage}>
             ›
@@ -97,7 +106,7 @@ export default function PropertyPage({ favourites, setFavourites }) {
         <div className="thumbnail-container">
           {property.images.map((img, index) => (
             <img
-              key={index}
+              key={`thumb-${index}`}
               src={img}
               alt={`Thumbnail ${index + 1}`}
               className={`thumbnail ${index === currentImage ? "active" : ""}`}
