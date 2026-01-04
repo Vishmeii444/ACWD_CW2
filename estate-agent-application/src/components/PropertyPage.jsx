@@ -1,59 +1,67 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import properties from "../data/properties.json";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import "./PropertyPage.css";
 
-export default function PropertyDetails({ favourites, setFavourites }) {
+export default function PropertyPage({ favourites, setFavourites }) {
   const { id } = useParams();
-  const property = properties.properties.find(p => p.id === id);
-  
+  const property = properties.properties.find((p) => p.id === id);
+  console.log("PROPERTY PAGE IS BEING USED:", property);
+  console.log("IMAGES:", property?.images);
+
   const [currentImage, setCurrentImage] = useState(0);
 
   if (!property) {
     return (
       <div className="not-found">
         <h2>Property Not Found</h2>
-        <Link to="/" className="back-link">← Back to Search</Link>
+        <Link to="/" className="back-link">
+          ← Back to Search
+        </Link>
       </div>
     );
   }
 
   const addToFavourites = () => {
-    if (!favourites.find(fav => fav.id === property.id)) {
+    if (!favourites.find((fav) => fav.id === property.id)) {
       setFavourites([...favourites, property]);
     }
   };
 
-  const isFavourite = favourites.some(fav => fav.id === property.id);
+  const isFavourite = favourites.some((fav) => fav.id === property.id);
 
   const nextImage = () => {
-    setCurrentImage((prev) => 
+    setCurrentImage((prev) =>
       prev === property.images.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevImage = () => {
-    setCurrentImage((prev) => 
+    setCurrentImage((prev) =>
       prev === 0 ? property.images.length - 1 : prev - 1
     );
   };
 
   // Google Maps embed URL
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(property.location)}`;
+  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(
+    property.location
+  )}`;
 
   return (
     <div className="property-details-container">
-      <Link to="/" className="back-link">← Back to Search</Link>
-      
+      <Link to="/" className="back-link">
+        ← Back to Search
+      </Link>
+
       <div className="property-header">
         <h1 className="detail-price">£{property.price.toLocaleString()}</h1>
-        <button 
-          className={`fav-button ${isFavourite ? 'active' : ''}`}
+        <button
+          className={`fav-button ${isFavourite ? "active" : ""}`}
           onClick={addToFavourites}
         >
-          {isFavourite ? '❤️ Saved' : '🤍 Save'}
+          {isFavourite ? "❤️ Saved" : "🤍 Save"}
         </button>
       </div>
 
@@ -65,13 +73,22 @@ export default function PropertyDetails({ favourites, setFavourites }) {
       {/* Image Gallery */}
       <div className="gallery-section">
         <div className="main-image-container">
-          <button className="nav-btn prev-btn" onClick={prevImage}>‹</button>
-          <img 
-            src={property.images[currentImage]} 
+          <button className="nav-btn prev-btn" onClick={prevImage}>
+            ‹
+          </button>
+          <img
+            key={property.images[currentImage]}
+            src={property.images[currentImage]}
             alt={`Property view ${currentImage + 1}`}
             className="main-image"
+            onError={(e) => {
+              e.target.src = "images/fallback.jpg";
+            }}
           />
-          <button className="nav-btn next-btn" onClick={nextImage}>›</button>
+
+          <button className="nav-btn next-btn" onClick={nextImage}>
+            ›
+          </button>
           <div className="image-counter">
             {currentImage + 1} / {property.images.length}
           </div>
@@ -83,8 +100,11 @@ export default function PropertyDetails({ favourites, setFavourites }) {
               key={index}
               src={img}
               alt={`Thumbnail ${index + 1}`}
-              className={`thumbnail ${index === currentImage ? 'active' : ''}`}
+              className={`thumbnail ${index === currentImage ? "active" : ""}`}
               onClick={() => setCurrentImage(index)}
+              onError={(e) => {
+                e.target.src = "images/fallback.jpg";
+              }}
             />
           ))}
         </div>
@@ -105,7 +125,7 @@ export default function PropertyDetails({ favourites, setFavourites }) {
             <p className="short-desc">{property.description}</p>
 
             <h3>Full Details</h3>
-            <p className="long-desc">{property.longDescription}</p>
+            <p className="long-desc">{property.description}</p>
             <div className="property-features">
               <h3>Key Features</h3>
               <ul>
@@ -123,13 +143,13 @@ export default function PropertyDetails({ favourites, setFavourites }) {
           <div className="tab-content">
             <h2>Floor Plan</h2>
             {property.floorplan ? (
-                <img 
-              src={property.floorplan} 
-              alt="Floor plan"
-              className="floorplan-image"
-            />
+              <img
+                src={property.floorplan}
+                alt="Floor plan"
+                className="floorplan-image"
+              />
             ) : (
-                <p>No floor plan available</p>
+              <p>No floor plan available</p>
             )}
           </div>
         </TabPanel>
@@ -145,7 +165,8 @@ export default function PropertyDetails({ favourites, setFavourites }) {
                 Google Maps would display here with property location
               </p>
               <p className="map-instructions">
-                To enable: Replace YOUR_API_KEY in the code with your Google Maps API key
+                To enable: Replace YOUR_API_KEY in the code with your Google
+                Maps API key
               </p>
             </div>
             {/* Uncomment when you have an API key:

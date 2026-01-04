@@ -12,7 +12,7 @@
       "floorplan": "images/floorplan.jpg",
       "picture": "images/prop1.jpg",
       "images": [
-        "images/prop1.jpg",
+        "images/prop9.jpg",
         "images/prop2.jpg",
         "images/prop3.jpg",
         "images/prop4.jpg",
@@ -143,7 +143,7 @@
       "tenure": "Leasehold",
       "description": "Modern 3-bedroom flat in SE1 with river views, open-plan living, and access to a private balcony. Close to London Bridge and major attractions...",
       "location": "South Bank, London SE1",
-      "postcode": "SE1",
+      "postcode": "W5",
       "floorplan": "images/floorplan.jpg",
       "picture": "images/prop6.jpg",
       "images": [
@@ -159,60 +159,6 @@
       "added": {
         "month": 1,
         "day": 2,
-        "year": 2025
-      }
-    },
-    {
-      "id": "prop7",
-      "type": "House",
-      "bedrooms": 3,
-      "price": 520000,
-      "tenure": "Freehold",
-      "description": "Beautifully maintained 3-bedroom house in W5 with spacious living areas, modern kitchen, and excellent school catchment. Ideal for families...",
-      "location": "Ealing, London W5",
-      "postcode": "W5",
-      "floorplan": "images/floorplan.jpg",
-      "picture": "images/prop7.jpg",
-      "images": [
-        "images/prop1.jpg",
-        "images/prop2.jpg",
-        "images/prop3.jpg",
-        "images/prop4.jpg",
-        "images/prop5.jpg",
-        "images/prop6.jpg",
-        "images/prop7.jpg",
-        "images/prop8.jpg"
-      ],
-      "added": {
-        "month": 12,
-        "day": 10,
-        "year": 2024
-      }
-    },
-    {
-      "id": "prop8",
-      "type": "Flat",
-      "bedrooms": 2,
-      "price": 350000,
-      "tenure": "Leasehold",
-      "description": "Contemporary 2-bedroom apartment in a vibrant area with excellent transport links, modern finishes, and plenty of natural light...",
-      "location": "Shoreditch, London E1",
-      "postcode": "E1",
-      "floorplan": "images/floorplan.jpg",
-      "picture": "images/prop8.jpg",
-      "images": [
-        "images/prop1.jpg",
-        "images/prop2.jpg",
-        "images/prop3.jpg",
-        "images/prop4.jpg",
-        "images/prop5.jpg",
-        "images/prop6.jpg",
-        "images/prop7.jpg",
-        "images/prop8.jpg"
-      ],
-      "added": {
-        "month": 1,
-        "day": 18,
         "year": 2025
       }
     }
