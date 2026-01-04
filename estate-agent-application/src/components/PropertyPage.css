@@ -76,11 +76,19 @@
 .main-image-container {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 300px;
   background: #f0f0f0;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 15px;
+}
+
+.images-stack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .main-image {
@@ -88,18 +96,18 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 300px;
   object-fit: contain;
   background: white;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 1;
+  transition: opacity 0.15s ease-in-out;
+  will-change: opacity;
 }
 
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: none;
   font-size: 3rem;
   color: #333;
@@ -107,15 +115,22 @@
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-btn:hover {
   background: white;
   transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .prev-btn {
@@ -130,12 +145,15 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 600;
+  z-index: 100;
+  user-select: none;
+  pointer-events: none;
 }
 
 .thumbnail-container {
