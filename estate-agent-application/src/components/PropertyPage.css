@@ -3,11 +3,13 @@
   margin: 0 auto;
   padding: 30px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #FFFDF5;
 }
 
+/* Back Link */
 .back-link {
   display: inline-block;
-  color: #0077ff;
+  color: #95B1EE;
   text-decoration: none;
   font-weight: 600;
   margin-bottom: 20px;
@@ -15,9 +17,10 @@
 }
 
 .back-link:hover {
-  color: #0055cc;
+  color: #364C84;
 }
 
+/* Header */
 .property-header {
   display: flex;
   justify-content: space-between;
@@ -27,16 +30,17 @@
 
 .detail-price {
   font-size: 2.5rem;
-  color: #0077ff;
+  color: #084734;
   font-weight: 700;
   margin: 0;
 }
 
+/* Favourite Button */
 .fav-button {
   padding: 12px 24px;
-  background: white;
-  border: 2px solid #ff4757;
-  color: #ff4757;
+  background: #FFFDF5;
+  border: 2px solid #084734;
+  color: #084734;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 8px;
@@ -45,25 +49,26 @@
 }
 
 .fav-button:hover {
-  background: #ff4757;
+  background: #084734;
   color: white;
   transform: scale(1.05);
 }
 
 .fav-button.active {
-  background: #ff4757;
+  background: #084734;
   color: white;
 }
 
+/* Location + Type */
 .detail-location {
   font-size: 1.3rem;
-  color: #333;
+  color: #084734;
   margin: 10px 0;
   font-weight: 500;
 }
 
 .detail-type {
-  color: #666;
+  color: #364C84;
   font-size: 1.1rem;
   margin-bottom: 30px;
 }
@@ -77,7 +82,7 @@
   position: relative;
   width: 100%;
   height: 300px;
-  background: #f0f0f0;
+  background: #CDEDB3;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 15px;
@@ -98,11 +103,12 @@
   width: 100%;
   height: 300px;
   object-fit: contain;
-  background: white;
+  background: #FFFDF5;
   transition: opacity 0.15s ease-in-out;
   will-change: opacity;
 }
 
+/* Navigation Buttons */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -110,7 +116,7 @@
   background: rgba(255, 255, 255, 0.95);
   border: none;
   font-size: 3rem;
-  color: #333;
+  color: #084734;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -120,12 +126,10 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-btn:hover {
-  background: white;
+  background: #CEF17B;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -133,29 +137,23 @@
   transform: translateY(-50%) scale(0.95);
 }
 
-.prev-btn {
-  left: 20px;
-}
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
 
-.next-btn {
-  right: 20px;
-}
-
+/* Image Counter */
 .image-counter {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.8);
+  background: #084734;
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 600;
-  z-index: 100;
-  user-select: none;
-  pointer-events: none;
 }
 
+/* Thumbnails */
 .thumbnail-container {
   display: flex;
   gap: 10px;
@@ -171,7 +169,6 @@
   cursor: pointer;
   border: 3px solid transparent;
   transition: all 0.3s;
-  flex-shrink: 0;
 }
 
 .thumbnail:hover {
@@ -180,13 +177,12 @@
 }
 
 .thumbnail.active {
-  border-color: #0077ff;
-  opacity: 1;
+  border-color: #364C84;
 }
 
 /* Tabs Section */
 .property-tabs {
-  background: white;
+  background: #FFFDF5;
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -194,7 +190,7 @@
 }
 
 .react-tabs__tab-list {
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid #CDEDB3;
   margin: 0 0 25px 0;
   padding: 0;
   display: flex;
@@ -203,38 +199,34 @@
 
 .react-tabs__tab {
   padding: 12px 24px;
-  background: transparent;
+  background: #CDEDB3;
+  border-radius: 6px 6px 0 0;
   border: none;
-  border-bottom: 3px solid transparent;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  color: #666;
+  color: #084734;
   transition: all 0.3s;
-  list-style: none;
 }
 
 .react-tabs__tab:hover {
-  color: #0077ff;
+  background: #CEF17B;
 }
 
 .react-tabs__tab--selected {
-  color: #0077ff;
-  border-bottom-color: #0077ff;
+  background: #084734;
+  color: white;
 }
 
-.tab-content {
-  padding: 10px 0;
-}
-
+/* Tab Content */
 .tab-content h2 {
-  color: #1a1a1a;
+  color: #084734;
   margin-bottom: 20px;
   font-size: 1.8rem;
 }
 
 .tab-content h3 {
-  color: #333;
+  color: #364C84;
   margin-top: 25px;
   margin-bottom: 15px;
   font-size: 1.3rem;
@@ -242,98 +234,62 @@
 
 .short-desc {
   font-size: 1.1rem;
-  color: #555;
+  color: #084734;
   line-height: 1.7;
   margin-bottom: 20px;
 }
 
 .long-desc {
   font-size: 1rem;
-  color: #666;
+  color: #364C84;
   line-height: 1.8;
 }
 
-.property-features ul {
-  list-style: none;
-  padding: 0;
-}
-
+/* Features */
 .property-features li {
   padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-  color: #555;
+  border-bottom: 1px solid #CDEDB3;
+  color: #084734;
   font-size: 1rem;
 }
 
-.property-features li:last-child {
-  border-bottom: none;
-}
-
+/* Floorplan */
 .floorplan-image {
   width: 100%;
-  max-width: 800px;
-  height: auto;
+  max-width: 400px;
+  height: 500px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Map */
 .map-address {
   font-size: 1.1rem;
-  color: #555;
+  color: #084734;
   margin-bottom: 20px;
   font-weight: 500;
 }
 
-.map-placeholder {
+.map-frame {
   width: 100%;
-  height: 450px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 3rem;
-}
-
-.map-note {
-  font-size: 1.2rem;
-  margin-top: 20px;
-}
-
-.map-instructions {
-  font-size: 0.9rem;
-  margin-top: 10px;
-  padding: 15px 30px;
-  background: rgba(255, 255, 255, 0.2);
+  height: 400px;
+  border: 0;
   border-radius: 8px;
+  margin-top: 10px;
 }
 
 /* Contact Section */
 .contact-section {
-  background: linear-gradient(135deg, #0077ff 0%, #0055cc 100%);
+  background: linear-gradient(135deg, #084734 0%, #364C84 100%);
   color: white;
   padding: 40px;
   border-radius: 12px;
   text-align: center;
 }
 
-.contact-section h2 {
-  margin: 0 0 10px 0;
-  font-size: 1.8rem;
-}
-
-.contact-section p {
-  margin: 0 0 25px 0;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
 .contact-btn {
-  background: white;
-  color: #0077ff;
-  border: none;
+  background: #FFFDF5;
+  color: #084734;
   padding: 15px 40px;
   font-size: 1.1rem;
   font-weight: 600;
@@ -344,89 +300,5 @@
 
 .contact-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.not-found {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.not-found h2 {
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .detail-price {
-    font-size: 2rem;
-  }
-
-  .main-image-container {
-    height: 400px;
-  }
-
-  .nav-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 2.5rem;
-  }
-
-  .thumbnail {
-    width: 100px;
-    height: 75px;
-  }
-}
-
-@media (max-width: 768px) {
-  .property-details-container {
-    padding: 20px 15px;
-  }
-
-  .property-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .detail-price {
-    font-size: 1.8rem;
-  }
-
-  .main-image-container {
-    height: 300px;
-  }
-
-  .nav-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 2rem;
-  }
-
-  .prev-btn {
-    left: 10px;
-  }
-
-  .next-btn {
-    right: 10px;
-  }
-
-  .thumbnail {
-    width: 80px;
-    height: 60px;
-  }
-
-  .property-tabs {
-    padding: 15px;
-  }
-
-  .react-tabs__tab {
-    padding: 10px 16px;
-    font-size: 0.9rem;
-  }
-
-  .contact-section {
-    padding: 30px 20px;
-  }
+  background: #CEF17B;
 }

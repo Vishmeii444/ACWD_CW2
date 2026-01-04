@@ -1,7 +1,8 @@
+/* Page Layout */
 .page-container {
   display: flex;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #FFFDF5;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -12,22 +13,24 @@
   margin: 0 auto;
 }
 
+/* Search Box */
 .search-container {
-  background: white;
+  background: #FFFDF5;
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(8, 71, 52, 0.15);
   margin-bottom: 30px;
 }
 
 .title {
   text-align: center;
-  color: #1a1a1a;
+  color: #084734;
   margin-bottom: 30px;
   font-size: 2rem;
   font-weight: 600;
 }
 
+/* Form */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -44,42 +47,51 @@
   grid-column: 1 / -1;
 }
 
+.form-group:first-child {
+  margin-bottom: 20px;
+}
+
 .form-group label {
   font-weight: 600;
   margin-bottom: 8px;
-  color: #333;
+  color: #084734;
   font-size: 0.95rem;
 }
 
 input[type="text"],
 input[type="number"],
 .react-datepicker-wrapper {
-  width: 100%;
+  width: 90%;
 }
 
 input[type="text"],
 input[type="number"] {
   padding: 10px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #CDEDB3;
   border-radius: 6px;
   font-size: 15px;
   transition: border-color 0.2s;
+  background: #FFFDF5;
+  color: #084734;
 }
 
 input:focus {
   outline: none;
-  border-color: #0077ff;
-  box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.1);
+  border-color: #364C84;
+  box-shadow: 0 0 0 3px rgba(54, 76, 132, 0.2);
 }
 
 .react-datepicker-wrapper input {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #CDEDB3;
   border-radius: 6px;
   font-size: 15px;
+  background: #FFFDF5;
+  color: #084734;
 }
 
+/* Buttons */
 .button-group {
   display: flex;
   gap: 15px;
@@ -98,35 +110,37 @@ input:focus {
   transition: all 0.3s;
 }
 
+/* Search Button */
 .search-btn {
-  background: linear-gradient(135deg, #0077ff 0%, #0055cc 100%);
+  background: linear-gradient(135deg, #084734 0%, #364C84 100%);
   color: white;
 }
 
 .search-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(8, 71, 52, 0.4);
 }
 
+/* Reset Button */
 .reset-btn {
-  background: #f0f0f0;
-  color: #333;
+  background: #CDEDB3;
+  color: #084734;
 }
 
 .reset-btn:hover {
-  background: #e0e0e0;
+  background: #CEF17B;
 }
 
 /* Results Section */
 .results-container {
-  background: white;
+  background: #FFFDF5;
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(8, 71, 52, 0.15);
 }
 
 .results-title {
-  color: #1a1a1a;
+  color: #084734;
   margin-bottom: 25px;
   font-size: 1.5rem;
   font-weight: 600;
@@ -138,9 +152,10 @@ input:focus {
   gap: 25px;
 }
 
+/* Property Cards */
 .property-card {
-  background: white;
-  border: 1px solid #e0e0e0;
+  background: #FFFDF5;
+  border: 1px solid #CDEDB3;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s;
@@ -149,7 +164,7 @@ input:focus {
 
 .property-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(8, 71, 52, 0.2);
 }
 
 .property-link {
@@ -169,27 +184,27 @@ input:focus {
 }
 
 .property-price {
-  color: #0077ff;
+  color: #084734;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 8px 0;
 }
 
 .property-location {
-  color: #555;
+  color: #364C84;
   font-size: 0.95rem;
   margin: 0 0 8px 0;
   font-weight: 500;
 }
 
 .property-details {
-  color: #777;
+  color: #084734;
   font-size: 0.9rem;
   margin: 0 0 10px 0;
 }
 
 .property-description {
-  color: #666;
+  color: #364C84;
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0;
@@ -199,10 +214,11 @@ input:focus {
   overflow: hidden;
 }
 
+/* Favourite Button */
 .fav-btn {
   width: 100%;
   padding: 12px;
-  background: #ff4757;
+  background: #084734;
   color: white;
   border: none;
   font-size: 0.95rem;
@@ -212,12 +228,13 @@ input:focus {
 }
 
 .fav-btn:hover {
-  background: #ee2f3d;
+  background: #364C84;
 }
 
+/* No Results */
 .no-results {
   text-align: center;
-  color: #777;
+  color: #364C84;
   font-size: 1.1rem;
   padding: 40px;
 }
@@ -225,8 +242,8 @@ input:focus {
 /* Favourites Sidebar */
 .favourites-sidebar {
   width: 320px;
-  background: white;
-  border-left: 1px solid #e0e0e0;
+  background: #FFFDF5;
+  border-left: 1px solid #CDEDB3;
   padding: 20px;
   overflow-y: auto;
   position: sticky;
@@ -240,17 +257,17 @@ input:focus {
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid #CDEDB3;
 }
 
 .favourites-header h2 {
   font-size: 1.3rem;
-  color: #1a1a1a;
+  color: #084734;
   margin: 0;
 }
 
 .clear-btn {
-  background: #ff4757;
+  background: #084734;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -262,20 +279,20 @@ input:focus {
 }
 
 .clear-btn:hover {
-  background: #ee2f3d;
+  background: #364C84;
 }
 
 .favourites-dropzone {
   min-height: 200px;
-  border: 2px dashed #ddd;
+  border: 2px dashed #CDEDB3;
   border-radius: 10px;
   padding: 15px;
-  background: #fafafa;
+  background: #FFFDF5;
 }
 
 .empty-message {
   text-align: center;
-  color: #999;
+  color: #364C84;
   padding: 40px 20px;
   font-size: 0.95rem;
 }
@@ -290,8 +307,8 @@ input:focus {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: white;
-  border: 1px solid #e0e0e0;
+  background: #FFFDF5;
+  border: 1px solid #CDEDB3;
   border-radius: 8px;
   padding: 10px;
   cursor: move;
@@ -299,16 +316,7 @@ input:focus {
 }
 
 .favourite-item:hover {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.favourite-item a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: inherit;
-  flex: 1;
+  box-shadow: 0 3px 10px rgba(8, 71, 52, 0.15);
 }
 
 .favourite-item img {
@@ -318,25 +326,21 @@ input:focus {
   border-radius: 6px;
 }
 
-.fav-info {
-  flex: 1;
-}
-
 .fav-price {
-  color: #0077ff;
+  color: #084734;
   font-weight: 700;
   margin: 0 0 4px 0;
   font-size: 0.95rem;
 }
 
 .fav-location {
-  color: #666;
+  color: #364C84;
   margin: 0;
   font-size: 0.85rem;
 }
 
 .remove-btn {
-  background: #ff4757;
+  background: #084734;
   color: white;
   border: none;
   width: 28px;
@@ -352,10 +356,10 @@ input:focus {
 }
 
 .remove-btn:hover {
-  background: #ee2f3d;
+  background: #364C84;
 }
 
-/* Responsive Design - iPad landscape and smaller */
+/* Responsive */
 @media (max-width: 1024px) {
   .page-container {
     flex-direction: column;
@@ -365,7 +369,7 @@ input:focus {
     width: 100%;
     height: auto;
     border-left: none;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #CDEDB3;
     position: static;
   }
 
@@ -378,7 +382,6 @@ input:focus {
   }
 }
 
-/* Mobile devices */
 @media (max-width: 768px) {
   .main-content {
     padding: 15px;

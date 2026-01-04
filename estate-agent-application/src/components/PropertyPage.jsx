@@ -21,7 +21,7 @@ export default function PropertyPage({ favourites, setFavourites }) {
       if (!imageCache.current.has(src)) {
         const img = new Image();
         img.onload = () => {
-          setLoadedImages(prev => new Set([...prev, src]));
+          setLoadedImages((prev) => new Set([...prev, src]));
         };
         img.src = src;
         imageCache.current.set(src, img);
@@ -45,11 +45,16 @@ export default function PropertyPage({ favourites, setFavourites }) {
     );
   }
 
-  const addToFavourites = () => {
-    if (!favourites.find((fav) => fav.id === property.id)) {
-      setFavourites([...favourites, property]);
-    }
-  };
+  const toggleFavourite = () => {
+  if (isFavourite) {
+    // Remove from favourites
+    setFavourites(favourites.filter((fav) => fav.id !== property.id));
+  } else {
+    // Add to favourites
+    setFavourites([...favourites, property]);
+  }
+};
+
 
   const isFavourite = favourites.some((fav) => fav.id === property.id);
 
@@ -77,9 +82,9 @@ export default function PropertyPage({ favourites, setFavourites }) {
         <h1 className="detail-price">£{property.price.toLocaleString()}</h1>
         <button
           className={`fav-button ${isFavourite ? "active" : ""}`}
-          onClick={addToFavourites}
+          onClick={toggleFavourite}
         >
-          {isFavourite ? "❤️ Saved" : "🤍 Save"}
+          {isFavourite ? "💚 Saved" : "🤍 Save"}
         </button>
       </div>
 
@@ -91,8 +96,8 @@ export default function PropertyPage({ favourites, setFavourites }) {
       {/* Image Gallery */}
       <div className="gallery-section">
         <div className="main-image-container">
-          <button 
-            className="nav-btn prev-btn" 
+          <button
+            className="nav-btn prev-btn"
             onClick={prevImage}
             aria-label="Previous image"
             type="button"
@@ -110,26 +115,26 @@ export default function PropertyPage({ favourites, setFavourites }) {
                 className="main-image"
                 style={{
                   opacity: index === currentImage ? 1 : 0,
-                  pointerEvents: index === currentImage ? 'auto' : 'none',
-                  visibility: loadedImages.has(img) ? 'visible' : 'hidden'
+                  pointerEvents: index === currentImage ? "auto" : "none",
+                  visibility: loadedImages.has(img) ? "visible" : "hidden",
                 }}
                 loading={index === 0 ? "eager" : "lazy"}
                 onError={(e) => {
-                  e.target.style.display = 'none';
+                  e.target.style.display = "none";
                 }}
               />
             ))}
           </div>
 
-          <button 
-            className="nav-btn next-btn" 
+          <button
+            className="nav-btn next-btn"
             onClick={nextImage}
             aria-label="Next image"
             type="button"
           >
             ›
           </button>
-          
+
           <div className="image-counter">
             {currentImage + 1} / {property.images.length}
           </div>
@@ -198,15 +203,15 @@ export default function PropertyPage({ favourites, setFavourites }) {
           <div className="tab-content">
             <h2>Location Map</h2>
             <p className="map-address">{property.location}</p>
-            <div className="map-placeholder">
-              <p>📍 Map View</p>
-              <p className="map-note">
-                Google Maps would display here with property location
-              </p>
-              <p className="map-instructions">
-                To enable: Add your Google Maps API key in the code
-              </p>
-            </div>
+            <iframe
+              className="map-frame"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(
+                property.location
+              )}&output=embed`}
+            ></iframe>
           </div>
         </TabPanel>
       </Tabs>

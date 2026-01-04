@@ -83,19 +83,25 @@ export default function SearchPage({ favourites, setFavourites }) {
     setHasSearched(false);
   };
 
-  const addToFavourites = (property) => {
-    if (!favourites.find((fav) => fav.id === property.id)) {
-      setFavourites([...favourites, property]);
-    }
-  };
+  const toggleFavourite = (property) => {
+  const isFav = favourites.some((fav) => fav.id === property.id);
 
-  const removeFromFavourites = (propertyId) => {
-    setFavourites(favourites.filter((fav) => fav.id !== propertyId));
-  };
+  if (isFav) {
+    // Remove it
+    setFavourites(favourites.filter((fav) => fav.id !== property.id));
+  } else {
+    // Add it
+    setFavourites([...favourites, property]);
+  }
+};
 
-  const clearFavourites = () => {
-    setFavourites([]);
-  };
+const removeFromFavourites = (propertyId) => {
+  setFavourites(favourites.filter((fav) => fav.id !== propertyId));
+};
+
+const clearFavourites = () => {
+  setFavourites([]);
+};
 
   const handleDragStart = (e, property) => {
     e.dataTransfer.setData("property", JSON.stringify(property));
@@ -104,7 +110,7 @@ export default function SearchPage({ favourites, setFavourites }) {
   const handleDrop = (e) => {
     e.preventDefault();
     const property = JSON.parse(e.dataTransfer.getData("property"));
-    addToFavourites(property);
+    toggleFavourite(property);
   };
 
   const handleDragOver = (e) => {
@@ -249,9 +255,11 @@ export default function SearchPage({ favourites, setFavourites }) {
                     </Link>
                     <button
                       className="fav-btn"
-                      onClick={() => addToFavourites(property)}
+                      onClick={() => toggleFavourite(property)}
                     >
-                      Add to Favourites
+                      {favourites.some((fav) => fav.id === property.id)
+                        ? "💚 Saved"
+                        : "🤍 Save"}
                     </button>
                   </div>
                 ))}
