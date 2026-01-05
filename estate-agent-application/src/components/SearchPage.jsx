@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import properties from "../data/properties.json";
 import "./SearchPage.css";

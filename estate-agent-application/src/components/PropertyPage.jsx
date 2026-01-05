@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import properties from "../data/properties.json";
