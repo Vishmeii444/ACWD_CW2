@@ -8,6 +8,7 @@ import "rc-slider/assets/index.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Slider from "rc-slider";
+import Header from "../components/Header";
 
 export default function SearchPage({ favourites, setFavourites }) {
   //form states
@@ -85,24 +86,24 @@ export default function SearchPage({ favourites, setFavourites }) {
   };
 
   const toggleFavourite = (property) => {
-  const isFav = favourites.some((fav) => fav.id === property.id);
+    const isFav = favourites.some((fav) => fav.id === property.id);
 
-  if (isFav) {
-    // Remove it
-    setFavourites(favourites.filter((fav) => fav.id !== property.id));
-  } else {
-    // Add it
-    setFavourites([...favourites, property]);
-  }
-};
+    if (isFav) {
+      // Remove it
+      setFavourites(favourites.filter((fav) => fav.id !== property.id));
+    } else {
+      // Add it
+      setFavourites([...favourites, property]);
+    }
+  };
 
-const removeFromFavourites = (propertyId) => {
-  setFavourites(favourites.filter((fav) => fav.id !== propertyId));
-};
+  const removeFromFavourites = (propertyId) => {
+    setFavourites(favourites.filter((fav) => fav.id !== propertyId));
+  };
 
-const clearFavourites = () => {
-  setFavourites([]);
-};
+  const clearFavourites = () => {
+    setFavourites([]);
+  };
 
   const handleDragStart = (e, property) => {
     e.dataTransfer.setData("property", JSON.stringify(property));
@@ -125,209 +126,214 @@ const clearFavourites = () => {
   };
 
   return (
-    <div className="page-container">
-      <div className="main-content">
-        <div className="search-container">
-          <h1 className="title">Search Properties</h1>
+    <>
+      <Header />
+      <div className="page-container">
+        <div className="main-content">
+          <div className="search-container">
+            <h1 className="title">Search Properties</h1>
 
-          {/*Select property type*/}
-          <div className="form-grid">
-            <div className="form-group">
-              <label>Property Type</label>
-              <Select
-                value={type}
-                onChange={setType}
-                options={typeOptions}
-                placeholder="Select Type"
-                isClearable
-              />
-            </div>
-
-            <div className="form-group">
-              <label>
-                Bedrooms: {bedroomsMin} - {bedroomsMax}
-              </label>
-              <Slider
-                range
-                min={1}
-                max={10}
-                value={[bedroomsMin, bedroomsMax]}
-                onChange={(values) => {
-                  setBedroomsMin(values[0]);
-                  setBedroomsMax(values[1]);
-                }}
-              />
-            </div>
-
-            <div className="form-group">
-              <label>
-                Price Range: {priceRange[0].toLocaleString()} -{" "}
-                {priceRange[1].toLocaleString()}{" "}
-              </label>
-              <Slider
-                range
-                min={100000}
-                max={1000000}
-                step={10000}
-                value={priceRange}
-                onChange={setPriceRange}
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Postcode</label>
-              <input
-                type="text"
-                value={postcode}
-                onChange={(e) => setPostcode(e.target.value)}
-                placeholder="Enter postcode"
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Available From</label>
-              <DatePicker
-                selected={dateFrom}
-                onChange={setDateFrom}
-                dateFormat="dd/MM/yyyy"
-                placeholderText="Select date"
-                isClearable
-              />
-            </div>
-
-            <div className="form-group">
-              <label>Available To</label>
-              <DatePicker
-                selected={dateTo}
-                onChange={setDateTo}
-                dateFormat="dd/MM/yyyy"
-                placeholderText="Select date"
-                isClearable
-              />
-            </div>
-
-            <div className="button-group">
-              <button className="search-btn" onClick={handleSearch}>
-                Search
-              </button>
-              <button className="reset-btn" onClick={handleReset}>
-                Reset Filters
-              </button>
-            </div>
-          </div>
-
-          {/*Search results*/}
-          {hasSearched && (
-            <div className="results-container">
-              <h2 className="results-title">
-                {searchResults.length}{" "}
-                {searchResults.length === 1 ? "Property" : "Properties"} Found
-              </h2>
-              <div className="results-grid">
-                {searchResults.map((property) => (
-                  <div
-                    key={property.id}
-                    className="property-card"
-                    draggable
-                    onDragStart={(e) => handleDragStart(e, property)}
-                  >
-                    <Link
-                      to={`/property/${property.id}`}
-                      className="property-link"
-                    >
-                      <img
-                        src={property.picture}
-                        alt={property.location}
-                        className="property-image"
-                      />
-                      <div className="property-info">
-                        <h3 className="property-price">
-                          {property.price.toLocaleString()}
-                        </h3>
-                        <p className="property-location">{property.location}</p>
-                        <p className="property-details">
-                          {property.bedrooms} bed {property.type} .{" "}
-                          {property.tenure}
-                        </p>
-                        <p className="property-description">
-                          {property.description}
-                        </p>
-                      </div>
-                    </Link>
-                    <button
-                      className="fav-btn"
-                      onClick={() => toggleFavourite(property)}
-                    >
-                      {favourites.some((fav) => fav.id === property.id)
-                        ? "💚 Saved"
-                        : "🤍 Save"}
-                    </button>
-                  </div>
-                ))}
+            {/*Select property type*/}
+            <div className="form-grid">
+              <div className="form-group">
+                <label>Property Type</label>
+                <Select
+                  value={type}
+                  onChange={setType}
+                  options={typeOptions}
+                  placeholder="Select Type"
+                  isClearable
+                />
               </div>
-              {searchResults.length === 0 && (
-                <p className="no-results">
-                  No properties match your search criteria
-                </p>
-              )}
-            </div>
-          )}
-        </div>
 
-        {/*Favourites Sidebar*/}
-        <aside
-          className="favourites-sidebar"
-          onDrop={handleDrop}
-          onDragOver={handleDragOver}
-        >
-          <div className="favourites-header">
-            <h2>Favourites</h2>
-            {favourites.length > 0 && (
-              <button className="clear-btn" onClick={clearFavourites}>
-                Clear All
-              </button>
+              <div className="form-group">
+                <label>
+                  Bedrooms: {bedroomsMin} - {bedroomsMax}
+                </label>
+                <Slider
+                  range
+                  min={1}
+                  max={10}
+                  value={[bedroomsMin, bedroomsMax]}
+                  onChange={(values) => {
+                    setBedroomsMin(values[0]);
+                    setBedroomsMax(values[1]);
+                  }}
+                />
+              </div>
+
+              <div className="form-group">
+                <label>
+                  Price Range: {priceRange[0].toLocaleString()} -{" "}
+                  {priceRange[1].toLocaleString()}{" "}
+                </label>
+                <Slider
+                  range
+                  min={100000}
+                  max={1000000}
+                  step={10000}
+                  value={priceRange}
+                  onChange={setPriceRange}
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Postcode</label>
+                <input
+                  type="text"
+                  value={postcode}
+                  onChange={(e) => setPostcode(e.target.value)}
+                  placeholder="Enter postcode"
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Available From</label>
+                <DatePicker
+                  selected={dateFrom}
+                  onChange={setDateFrom}
+                  dateFormat="dd/MM/yyyy"
+                  placeholderText="Select date"
+                  isClearable
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Available To</label>
+                <DatePicker
+                  selected={dateTo}
+                  onChange={setDateTo}
+                  dateFormat="dd/MM/yyyy"
+                  placeholderText="Select date"
+                  isClearable
+                />
+              </div>
+
+              <div className="button-group">
+                <button className="search-btn" onClick={handleSearch}>
+                  Search
+                </button>
+                <button className="reset-btn" onClick={handleReset}>
+                  Reset Filters
+                </button>
+              </div>
+            </div>
+
+            {/*Search results*/}
+            {hasSearched && (
+              <div className="results-container">
+                <h2 className="results-title">
+                  {searchResults.length}{" "}
+                  {searchResults.length === 1 ? "Property" : "Properties"} Found
+                </h2>
+                <div className="results-grid">
+                  {searchResults.map((property) => (
+                    <div
+                      key={property.id}
+                      className="property-card"
+                      draggable
+                      onDragStart={(e) => handleDragStart(e, property)}
+                    >
+                      <Link
+                        to={`/property/${property.id}`}
+                        className="property-link"
+                      >
+                        <img
+                          src={property.picture}
+                          alt={property.location}
+                          className="property-image"
+                        />
+                        <div className="property-info">
+                          <h3 className="property-price">
+                            {property.price.toLocaleString()}
+                          </h3>
+                          <p className="property-location">
+                            {property.location}
+                          </p>
+                          <p className="property-details">
+                            {property.bedrooms} bed {property.type} .{" "}
+                            {property.tenure}
+                          </p>
+                          <p className="property-description">
+                            {property.description}
+                          </p>
+                        </div>
+                      </Link>
+                      <button
+                        className="fav-btn"
+                        onClick={() => toggleFavourite(property)}
+                      >
+                        {favourites.some((fav) => fav.id === property.id)
+                          ? "💚 Saved"
+                          : "🤍 Save"}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                {searchResults.length === 0 && (
+                  <p className="no-results">
+                    No properties match your search criteria
+                  </p>
+                )}
+              </div>
             )}
           </div>
-          <div
-            className="favourites-dropzone"
-            onDrop={handleRemoveDrop}
+
+          {/*Favourites Sidebar*/}
+          <aside
+            className="favourites-sidebar"
+            onDrop={handleDrop}
             onDragOver={handleDragOver}
           >
-            {favourites.length === 0 ? (
-              <p className="empty-message">
-                Drag properties here or click the heart button
-              </p>
-            ) : (
-              <div className="favourites-list">
-                {favourites.map((property) => (
-                  <div
-                    key={property.id}
-                    className="favourite-item"
-                    draggable
-                    onDragStart={(e) => handleDragStart(e, property)}
-                  >
-                    <Link to={`/property/${property.id}`}>
-                      <img src={property.picture} alt={property.location} />
-                      <div className="fav-info">
-                        <p className="fav-price">
-                          £{property.price.toLocaleString()}
-                        </p>
-                        <p className="fav-location">{property.postcode}</p>
-                      </div>
-                    </Link>
-                    <button
-                      className="remove-btn"
-                      onClick={() => removeFromFavourites(property.id)}
+            <div className="favourites-header">
+              <h2>Favourites</h2>
+              {favourites.length > 0 && (
+                <button className="clear-btn" onClick={clearFavourites}>
+                  Clear All
+                </button>
+              )}
+            </div>
+            <div
+              className="favourites-dropzone"
+              onDrop={handleRemoveDrop}
+              onDragOver={handleDragOver}
+            >
+              {favourites.length === 0 ? (
+                <p className="empty-message">
+                  Drag properties here or click the heart button
+                </p>
+              ) : (
+                <div className="favourites-list">
+                  {favourites.map((property) => (
+                    <div
+                      key={property.id}
+                      className="favourite-item"
+                      draggable
+                      onDragStart={(e) => handleDragStart(e, property)}
                     >
-                      ✕
-                    </button>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </aside>
+                      <Link to={`/property/${property.id}`}>
+                        <img src={property.picture} alt={property.location} />
+                        <div className="fav-info">
+                          <p className="fav-price">
+                            £{property.price.toLocaleString()}
+                          </p>
+                          <p className="fav-location">{property.postcode}</p>
+                        </div>
+                      </Link>
+                      <button
+                        className="remove-btn"
+                        onClick={() => removeFromFavourites(property.id)}
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
